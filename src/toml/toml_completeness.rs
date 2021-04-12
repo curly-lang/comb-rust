@@ -6,7 +6,7 @@ pub enum CompleteError {
   DependencyFail(String),
 }
 
-pub fn complete(
+pub fn complete_module(
   toml_contents: &mut Value
 ) -> Result<(), CompleteError> {
   let mut full_module_attributes: std::collections::HashMap<&str, fn(toml::value::Table) -> Value> = std::collections::HashMap::new();
