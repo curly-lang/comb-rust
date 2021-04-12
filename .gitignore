@@ -1,0 +1,8 @@
+/target
+.build
+Cargo.lock
+tags
+history.txt
+*.o
+*.a
+*comb.*
