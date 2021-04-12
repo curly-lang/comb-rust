@@ -30,9 +30,8 @@ pub fn generate_toml(
   comb_build_contents.push_str(&comb_build_generator.to_string());
   comb_build_contents.push('\n');
 
-  match comb_build.write_all(comb_build_contents.as_bytes()) {
-    Err(_) => return Err(GenerateFailed::FileError(format!("failed to write to {}", file_name))),
-    Ok(_) => (),
+  if comb_build.write_all(comb_build_contents.as_bytes()).is_err() {
+    return Err(GenerateFailed::FileError(format!("failed to write to {}", file_name)));
   }
 
   Ok(())

@@ -17,7 +17,7 @@ pub fn parse_toml(
 
   let parsed_toml_attempt = file_contents.as_str().parse::<toml::Value>();
   match parsed_toml_attempt {
-    Ok(parsed_toml) => return Ok(parsed_toml),
-    Err(e) => return Err(ParseFailed::TomlError(e)),
+    Ok(parsed_toml) => Ok(parsed_toml),
+    Err(e) => Err(ParseFailed::TomlError(e)),
   }
 }
