@@ -8,3 +8,6 @@ edition = "2018"
 
 [dependencies]
 toml = "0.5"
+run_script = "0.7.0"
+fs_extra = "1.2.0"
+shellexpand = "1.0.0"

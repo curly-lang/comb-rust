@@ -10,7 +10,6 @@ pub fn generate_build_toml(
   update: bool,
 ) -> Result<(), ()> {
   if Path::new(output_file_name).exists() && !update {
-    println!("File {} exists, skipping regeneration...", output_file_name);
     return Ok(());
   }
 

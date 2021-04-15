@@ -1,3 +1,4 @@
+#[derive(Debug)]
 pub enum ParseFailed {
   FileError(Box<dyn std::error::Error>),
   TomlError(toml::de::Error),
